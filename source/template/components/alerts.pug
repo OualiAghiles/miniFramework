@@ -1,0 +1,35 @@
+.m-2.text-center
+  .p-2
+    .inline-flex.items-center.bg-white.leading-none.text-pink-600.rounded-full.p-2.shadow.text-teal.text-sm
+      span.inline-flex.bg-pink-600.text-white.rounded-full.h-6.px-3.justify-center.items-center Pink
+      span.inline-flex.px-2 Donec sit amet neque risus. Pellentesque leo mauris, dictum et ligula in.
+  .p-2
+    .inline-flex.items-center.bg-white.leading-none.text-purple-600.rounded-full.p-2.shadow.text-sm
+      span.inline-flex.bg-purple-600.text-white.rounded-full.h-6.px-3.justify-center.items-center.text- Purple
+      span.inline-flex.px-2 Aliquam condimentum, odio ac finibus fermentum neque risus.
+  .p-2
+    .inline-flex.items-center.bg-white.leading-none.text-purple-600.rounded-full.p-2.shadow.text-teal.text-sm
+      span.inline-flex.bg-indigo-600.text-white.rounded-full.h-6.px-3.justify-center.items-center Indigo
+      span.inline-flex.px-2 Praesent ex nibh, laoreet id luctus vitae, porttitor at turpis. 
+// Header Alert
+.alert-banner.w-full.fixed.top-0
+  input#banneralert.hidden(type='checkbox')
+  label.close.cursor-pointer.flex.items-center.justify-between.w-full.p-2.bg-red-500.shadow.text-white(title='close', for='banneralert')
+    | Banner Alert (click anywhere to close)
+    svg.fill-current.text-white(xmlns='http://www.w3.org/2000/svg', width='18', height='18', viewBox='0 0 18 18')
+      path(d='M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z')
+// Footer Alert
+.alert-footer.w-full.fixed.bottom-0
+  input#footeralert.hidden(type='checkbox')
+  .flex.items-center.justify-between.w-full.p-2.bg-blue-500.shadow.text-white
+    | Footer Alert (Only use X to close)
+    label.close.cursor-pointer(title='close', for='footeralert')
+      svg.fill-current.text-white(xmlns='http://www.w3.org/2000/svg', width='18', height='18', viewBox='0 0 18 18')
+        path(d='M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z')
+// Toast
+.alert-toast.fixed.bottom-0.right-0.m-8.max-w-sm(class='w-5/6 md:w-full')
+  input#footertoast.hidden(type='checkbox')
+  label.close.cursor-pointer.flex.items-start.justify-between.w-full.p-2.bg-green-500.h-24.rounded.shadow-lg.text-white(title='close', for='footertoast')
+    | Toast Alert (click anywhere to close)
+    svg.fill-current.text-white(xmlns='http://www.w3.org/2000/svg', width='18', height='18', viewBox='0 0 18 18')
+      path(d='M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z')
