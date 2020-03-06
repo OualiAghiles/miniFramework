@@ -1,0 +1,55 @@
+body
+  min-height: 100vh
+  position: relative
+.playContent
+  position: relative
+  transition: all 0.4s ease-in-out
+  img
+    width: 100%
+    max-width: 800px
+    height: auto
+  .yt-icon
+    position: absolute
+    left: 50%
+    top: 50%
+    transform: translateX(-50%) translateY(-50%)
+  .loader
+    display: inline-block
+    width: 80px
+    height: 80px
+    position: absolute
+    top: 50%
+    left: 50%
+    z-index: 30
+    transform: translateX(-50%) translateY(-50%)
+.nsc-vid
+  transition: transform 0.4s cubic-bezier(.4,0,0,1), opacity 0.1s ease 
+  transform: rotateZ(-20deg)
+  border-radius: 16px
+  overflow: hidden
+  @apply .shadow-xl
+.overlay
+  position: fixed
+  top: 0
+  left: 0
+  right: 0
+  bottom: 0
+  background: rgba(0,0,0,0.9)
+  opacity: 0
+  transition: opacity 0.4s cubic-bezier(.4,0,0,1)
+  display: flex
+  justify-content: center
+  justify-items: center
+  iframe
+    align-self: center
+.close
+  position: absolute
+  top: 25px
+  right: 25px
+  cursor: pointer
+  transition: transform 0.3s cubic-bezier(.4,0,0,1)
+  display: inline-block
+  width: 48px
+  height: 48px
+  &:hover
+    transform: scale(1.4)

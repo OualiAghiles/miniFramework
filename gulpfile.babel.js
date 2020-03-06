@@ -167,7 +167,7 @@ const build = gulp.series(
   images,
   serve
 );
-/**
+/*
  * Export a default task
  */
 export default build;

@@ -1,6 +1,8 @@
-# Basic Gulpfile
+# LightBox responsive
 
->    * Vanilla JavaScript ES6
+> This plugin made with 
+>    * Vanilla JavaScript
+>    * Css Framwork tailwindCSS (not important)
 >    * Sass Preprocessor
 >    * Pug template engine
 >    * Gulp as task runner
@@ -52,15 +54,33 @@ $ gulp build
 ---
 Structure on source file
 ------
+>    visite [body scroll lock](https://github.com/willmcpo/body-scroll-lock#readme) site to details for the plugin
 
->* src
+> source
 >    - assets
 >        1. images
->            - chevron_left.svg
->            - chevron_right.svg
+>            - chevron.svg
+>            - close.svg
+>            - loader.svg
 >        2. styles
+>            - mainb.sass
 >            - main.sass
+>            - sass
+>               - lightbox.sass (***minimum style to make the LightBox work correctly***)
 >        3. scripts
 >            - app.js
+>            - plugins
+>               - Zoomer.js
+>               - vendor
+>                   * body-scroll-lock.js 
+>            - touchMobile.js
 >    - template
->       - index.pug   
+>       - index.pug    
+>       - slider.pug
+
+
+##### Version
+1.0
+
+##### License
+MIT

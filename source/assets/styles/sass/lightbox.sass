@@ -1,0 +1,73 @@
+.lightbox
+  @apply .fixed .top-0 .left-0  .w-full .h-full  .overflow-auto
+  z-index: 10
+  background: rgba(0,0,0,0.7)
+  animation: lightboxIn 0.5s ease
+  transition: opacity 0.5s ease-out
+  &.fadeOut
+    opacity: 0
+  .lightbox__content
+    @apply .flex .items-center .justify-center .content-center .min-h-screen   
+    margin-left: 50px
+    margin-right: 50px
+    img
+      max-width: 100%
+      height: auto
+      animation: lightboxIn 0.5s ease
+  .lightbox__close,
+  .lightbox__prev,
+  .lightbox__next
+    @apply .fixed .cursor-pointer .text-white .opacity-50 .outline-none
+    transition: opacity 0.3s ease
+    text-indent: -30000px
+    width: 35px
+    height: 35px
+    z-index: 11
+    &:hover
+      @apply .opacity-100
+  .lightbox__close
+    top: 25px
+    right: 25px
+    background: url('../img/close.svg') center center / 24px 24px no-repeat
+    z-index: 12
+    background-size: 120%
+  .lightbox__prev,
+  .lightbox__next
+    background: url('../img/chevron.svg') center center / 24px 24px  no-repeat
+    background-size: 120%
+    top: 0%
+    right: 0 
+    height: 100%
+    width: 50px
+    transform: translateY(-12px)
+  .lightbox__prev
+    right: auto
+    left: 0
+    transform: rotate(180deg)
+  .lightbox__imgLoader
+    width: 100px
+    height: 100px
+    display: inline-block    
+    background: url('../img/loader.svg') center center / 100% 100%  no-repeat 
+    opacity: 0.5
+  .lightbox__thumbs
+    display: flex
+    position: absolute
+    bottom: 50px
+    justify-content: space-between
+    width: 800px
+    max-width: 100%
+    left: 50%
+    transform: translateX(-50%)
+    .lightbox__thumbs--img
+        border-radius: 50%
+        &:hover
+          transform: scale(1.2)
+// animations
+@keyframes lightboxIn 
+  from 
+    opacity: 0
+  to 
+    opacity: 1
+
+  
