@@ -6,8 +6,12 @@
 class Accordion {
   /**
    *Creates an instance of Accordion.
-   * @param {*} className
-   * @param {*} [options={}]
+   * @param {String} className
+   * @param {Object} [options={
+      oneVisible: true,
+      closeAllAtStart: false,
+      openAllAtStart: false
+    ]
    * @memberof Accordion
    */
   constructor (className, options = {}) {
@@ -17,11 +21,11 @@ class Accordion {
       openAllAtStart: false
     }, options)
     this.els = document.querySelector(className)
-    this.init(this.els)
+    this.init()
   }
 
-  init (accordion) {
-    const headers = accordion.querySelectorAll('.js-toggler')
+  init () {
+    const headers = this.els.querySelectorAll('.js-toggler')
     headers.forEach(h => {
       const parent = h.parentElement
       const content = h.nextElementSibling
@@ -43,9 +47,15 @@ class Accordion {
         this.toggle(h)
       })
     })
-
   }
-
+  
+  /**
+   *
+   *
+   * @param {*} parent
+   * @param {*} el
+   * @memberof Accordion
+   */
   hide (parent, el) {
     const height = el.offsetHeight
     el.style.height = height + 'px'
@@ -55,6 +65,13 @@ class Accordion {
     this.rotateIconClose(parent.querySelector('.js-toggler'))
   }
 
+  /**
+   *
+   *
+   * @param {*} parent
+   * @param {*} el
+   * @memberof Accordion
+   */
   show (parent, el) {
     el.style.height = ''
     const height = el.offsetHeight
@@ -65,6 +82,12 @@ class Accordion {
     this.rotateIconActive(parent.querySelector('.js-toggler'))
   }
 
+  /**
+   *
+   *
+   * @param {*} header
+   * @memberof Accordion
+   */
   rotateIconActive (header) {
     const icon = header.querySelector('.js-icon')
     const svg = icon.querySelector('svg')
@@ -76,6 +99,12 @@ class Accordion {
     icon.style.transform = 'rotateZ(180deg) scale(1.1)'
   }
 
+  /**
+ *
+ *
+ * @param {*} header
+ * @memberof Accordion
+ */
   rotateIconClose (header) {
     const icon = header.querySelector('.js-icon')
     const svg = icon.querySelector('svg')
@@ -87,6 +116,12 @@ class Accordion {
     icon.style.transform = 'rotateZ(0deg)'
   }
 
+  /**
+   *
+   *
+   * @param {HTMLElement} h - header(element clicked)
+   * @memberof Accordion
+   */
   toggle (h) {
     const parent = h.parentElement
     const content = h.nextElementSibling
