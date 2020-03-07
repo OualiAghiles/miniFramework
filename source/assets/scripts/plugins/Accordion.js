@@ -21,9 +21,8 @@ class Accordion {
       openAllAtStart: false
     }, options)
     this.els = document.querySelector(className)
-
   }
-  
+
   /**
    *
    * init the accorion
@@ -54,7 +53,7 @@ class Accordion {
       })
     })
   }
-  
+
   /**
    *
    *
