@@ -3,23 +3,30 @@ export default class Alert {
     this.alertsHandler = document.querySelectorAll(className)
   }
 
-  show (event) {
-
+  show (event, info) {
+    this.createAlert()
+    this.initClose(info.target)
   }
 
-  hide () {
-
+  hide (el) {
+    const closeClass = el.dataset.out
+    const openClass = el.dataset.in
+    el.classList.remove(openClass)
+    el.classList.add(closeClass)
   }
 
-  close () {
-
+  close (el) {
+    this.hide(el)
+    setTimeout(() => {
+      el.remove()
+    }, 400)
   }
 
   getInfo (elment) {
 
   }
 
-  createAlert () {
+  createAlert (info) {
     const html = ''
     return html
   }
@@ -28,9 +35,18 @@ export default class Alert {
     const alerts = Array.from(this.alertsHandler)
     alerts.forEach(alert => {
       alert.addEventListener('click', (e) => {
+        const info = this.getInfo(alert)
         e.preventDefault()
-        this.show(e)
+        this.show(e, info)
       })
+    })
+  }
+
+  initClose (target) {
+    const targetEl = document.querySelector(target)
+    const close = targetEl.querySelector('.close')
+    close.addEventListener('click', () => {
+      this.close(targetEl).band(this)
     })
   }
 }
