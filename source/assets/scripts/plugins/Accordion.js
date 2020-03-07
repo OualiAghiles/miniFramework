@@ -1,4 +1,15 @@
+/**
+ *
+ *
+ * @class Accordion
+ */
 class Accordion {
+  /**
+   *Creates an instance of Accordion.
+   * @param {*} className
+   * @param {*} [options={}]
+   * @memberof Accordion
+   */
   constructor (className, options = {}) {
     this.options = Object.assign({}, {
       oneVisible: true,

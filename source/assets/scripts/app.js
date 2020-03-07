@@ -6,6 +6,11 @@ window.addEventListener('load', function () {
   })
   new Accordion('.js-accordion-2', {
     closeAllAtStart: false,
-    oneVisible: false
+    oneVisible: false,
+  })
+  new Accordion('.js-accordion-3', {
+    closeAllAtStart: false,
+    oneVisible: false,
+    openAllAtStart: true
   })
 })
