@@ -21,9 +21,15 @@ class Accordion {
       openAllAtStart: false
     }, options)
     this.els = document.querySelector(className)
-    this.init()
-  }
 
+  }
+  
+  /**
+   *
+   * init the accorion
+   * @exemple this.init()
+   * @memberof Accordion
+   */
   init () {
     const headers = this.els.querySelectorAll('.js-toggler')
     headers.forEach(h => {
