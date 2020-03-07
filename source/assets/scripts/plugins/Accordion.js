@@ -5,34 +5,31 @@ class Accordion {
       closeAllAtStart: false,
       openAllAtStart: false
     }, options)
-    this.els = document.querySelectorAll(className)
-    this.accordions = Array.from(this.els)
-    this.init(this.accordions)
+    this.els = document.querySelector(className)
+    this.init(this.els)
   }
 
-  init (arr) {
-    arr.forEach(accordion => {
-      const headers = accordion.querySelectorAll('.js-toggler')
-      headers.forEach(h => {
-        const parent = h.parentElement
-        const content = h.nextElementSibling
-        content.style.transition = 'all 0.36s ease-in-out'
-        if (this.options.closeAllAtStart && !this.options.openAllAtStart) {
+  init (accordion) {
+    const headers = accordion.querySelectorAll('.js-toggler')
+    headers.forEach(h => {
+      const parent = h.parentElement
+      const content = h.nextElementSibling
+      content.style.transition = 'all 0.36s ease-in-out'
+      if (this.options.closeAllAtStart && !this.options.openAllAtStart) {
+        this.hide(parent, content)
+      } else if (this.options.openAllAtStart && !this.options.closeAllAtStart && !this.options.oneVisible) {
+        this.show(parent, content)
+      } else {
+        if (!parent.classList.contains('active')) {
           this.hide(parent, content)
-        } else if (this.options.openAllAtStart && !this.options.closeAllAtStart && !this.options.oneVisible) {
-          this.show(parent, content)
         } else {
-          if (!parent.classList.contains('active')) {
-            this.hide(parent, content)
-          } else {
-            this.rotateIconActive(h)
-          }
+          this.rotateIconActive(h)
         }
-      })
-      headers.forEach(h => {
-        h.addEventListener('click', () => {
-          this.toggle(h)
-        })
+      }
+    })
+    headers.forEach(h => {
+      h.addEventListener('click', () => {
+        this.toggle(h)
       })
     })
 
