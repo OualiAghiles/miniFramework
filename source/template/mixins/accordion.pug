@@ -1,0 +1,19 @@
+mixin toggler(infos, clsParent)
+  section.shadow.bg-white.accordion(class=clsParent)
+    each info in infos
+      article.border-b.overflow-hidden(class=info.cls) 
+        header.js-toggler.border-l-2.border-transparent.flex.justify-between.items-center.p-5.pl-8.pr-8.cursor-pointer.select-none
+          span.text-gray-600.font-thin.text-lg
+            | #{info.title}
+          .js-icon.rounded-full.w-7.h-7.flex.items-center.justify-center
+            // icon by feathericons.com
+            svg(aria-hidden='true', data-reactid='266', fill='none', height='24', stroke='currentColor', stroke-linecap='round', stroke-linejoin='round', stroke-width='2', viewBox='0 0 24 24', width='24', xmlns='http://www.w3.org/2000/svg')
+              polyline(points='6 9 12 15 18 9')
+        article.border-b
+          .border-l-2.bg-gray-200.border-indigo-400
+            header.flex.justify-between.items-center.p-5.pl-8.pr-8.cursor-pointer.select-none
+              span.text-indigo-400.font-thin.text-xl
+                | #{info.innerTitle}
+            div
+              .pl-8.pr-8.pb-5.text-gray-600
+                |#{info.content}
