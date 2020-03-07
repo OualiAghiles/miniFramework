@@ -12,7 +12,7 @@ class Accordion {
 
   init (arr) {
     arr.forEach(accordion => {
-      const headers = accordion.querySelectorAll('.js-toggle')
+      const headers = accordion.querySelectorAll('.js-toggler')
       headers.forEach(h => {
         const parent = h.parentElement
         const content = h.nextElementSibling
@@ -44,7 +44,7 @@ class Accordion {
     el.offsetHeight
     el.style.height = 0
     parent.classList.remove('active')
-    this.rotateIconClose(parent.querySelector('.js-toggle'))
+    this.rotateIconClose(parent.querySelector('.js-toggler'))
   }
 
   show (parent, el) {
@@ -54,7 +54,7 @@ class Accordion {
     el.offsetHeight
     el.style.height = height + 'px'
     parent.classList.add('active')
-    this.rotateIconActive(parent.querySelector('.js-toggle'))
+    this.rotateIconActive(parent.querySelector('.js-toggler'))
   }
 
   rotateIconActive (header) {
